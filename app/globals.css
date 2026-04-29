@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-navy: #0B2A5B;
+  --brand-red: #C8102E;
+  --brand-green: #2E7D32;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: #0f172a;
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-semibold transition-all duration-300 active:scale-[0.98];
+  }
+  .btn-primary {
+    @apply btn bg-brand-red text-white shadow-soft hover:bg-brand-redDark hover:-translate-y-0.5 hover:shadow-glow;
+  }
+  .btn-whatsapp {
+    @apply btn bg-[#25D366] text-white shadow-soft hover:bg-[#1ebe5b] hover:-translate-y-0.5;
+  }
+  .btn-outline {
+    @apply btn border-2 border-white/80 text-white hover:bg-white hover:text-brand-navy;
+  }
+  .btn-navy {
+    @apply btn bg-brand-navy text-white hover:bg-brand-navyDark hover:-translate-y-0.5;
+  }
+  .section {
+    @apply py-20 sm:py-24;
+  }
+  .eyebrow {
+    @apply inline-block text-xs sm:text-sm font-bold tracking-[0.2em] uppercase text-brand-red;
+  }
+  .h-display {
+    @apply font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-brand-navy;
+  }
+  .card-hover {
+    @apply transition-all duration-500 hover:-translate-y-2 hover:shadow-soft;
+  }
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero parallax background — premium red Brahman bull */
+.hero-bg {
+  background-image: linear-gradient(
+      120deg,
+      rgba(11, 42, 91, 0.86) 0%,
+      rgba(11, 42, 91, 0.55) 40%,
+      rgba(200, 16, 46, 0.65) 100%
+    ),
+    url("/img/hero-bull.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+@media (max-width: 768px) {
+  .hero-bg { background-attachment: scroll; }
+}
+
+/* Vibrant utility classes */
+.text-gradient-fire {
+  background: linear-gradient(90deg, #F2B705 0%, #C8102E 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.text-gradient-fresh {
+  background: linear-gradient(90deg, #76C043 0%, #2E7D32 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.ring-gradient {
+  position: relative;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+.ring-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  margin: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #F2B705, #C8102E, #0B2A5B);
+}
+.shine-overlay {
+  position: relative;
+  overflow: hidden;
+}
+.shine-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.9s ease;
+}
+.shine-overlay:hover::after { transform: translateX(120%); }
+
+/* Tape banner */
+.tape {
+  background:
+    repeating-linear-gradient(
+      135deg,
+      #C8102E 0 24px,
+      #0B2A5B 24px 48px
+    );
+}
+
+/* Subtle pattern */
+.pattern-dots {
+  background-image: radial-gradient(rgba(11,42,91,0.08) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #0B2A5B; border-radius: 8px; }

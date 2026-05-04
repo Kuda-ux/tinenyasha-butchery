@@ -1,33 +1,39 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Tinenyasha Butchery & Farm-Fresh Produces | Marondera, Zimbabwe",
+  title: "Tinenyasha Butchery & Farm-Fresh | Butchery in Marondera & Harare",
   description:
-    "Premium quality meat and farm-fresh produce in Marondera. Beef, pork, goat, chicken, fish, sausages, polony, burger patties, vegetables and fruits — delivered fresh to your doorstep.",
+    "Tinenyasha Butchery & Farm-Fresh supplies quality beef, pork, goat meat, chicken, fish, sausages, polony, roadrunners and farm-fresh produce in Marondera and Harare.",
   keywords: [
-    "butchery in Marondera",
-    "fresh meat Zimbabwe",
-    "farm fresh produce Zimbabwe",
     "Tinenyasha Butchery",
-    "meat delivery Marondera",
-    "beef Zimbabwe",
-    "pork Marondera",
+    "Tinenyasha Farm Fresh",
+    "butchery in Marondera",
+    "butchery in Harare",
+    "fresh meat Zimbabwe",
+    "beef Marondera",
+    "pork Harare",
     "goat meat Zimbabwe",
-    "chicken Marondera",
+    "chicken",
+    "fish",
+    "sausages",
+    "polony",
+    "roadrunners",
+    "farm fresh produce",
   ],
   metadataBase: new URL("https://tinenyasha-butchery.vercel.app"),
   openGraph: {
-    title: "Tinenyasha Butchery & Farm-Fresh Produces",
+    title: "Tinenyasha Butchery & Farm-Fresh | Marondera & Harare",
     description:
-      "Fresh from farm to your table. Premium meat & farm produce in Marondera, Zimbabwe.",
+      "Quality beef, pork, goat, chicken, fish, sausages, polony, roadrunners and farm-fresh produce — serving Marondera & Harare, Zimbabwe.",
     type: "website",
     locale: "en_ZW",
     images: ["/logo.jpeg"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tinenyasha Butchery & Farm-Fresh Produces",
-    description: "Fresh from farm to your table. Marondera, Zimbabwe.",
+    title: "Tinenyasha Butchery & Farm-Fresh",
+    description:
+      "Butchery & farm-fresh produce in Marondera and Harare, Zimbabwe.",
     images: ["/logo.jpeg"],
   },
   icons: { icon: "/logo.jpeg", apple: "/logo.jpeg" },

@@ -3,6 +3,7 @@ import {
   Phone,
   MapPin,
   Mail,
+  Facebook,
   Clock,
   Truck,
   Award,
@@ -45,7 +46,7 @@ export default function Home() {
             <Reveal>
               <span className="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur px-4 py-2 text-xs sm:text-sm font-bold tracking-[0.2em] uppercase ring-1 ring-white/20">
                 <span className="h-2 w-2 rounded-full bg-brand-gold animate-pulse" />
-                Marondera • Zimbabwe
+                Marondera & Harare • Zimbabwe
               </span>
             </Reveal>
             <Reveal delay={120}>
@@ -58,8 +59,8 @@ export default function Home() {
             </Reveal>
             <Reveal delay={240}>
               <p className="mt-6 text-base sm:text-lg lg:text-xl text-white/90 max-w-2xl leading-relaxed">
-                From our farm to your kitchen — hand-cut <strong>beef, pork, goat, chicken &amp; fish</strong>,
-                plus crisp vegetables, eggs and produce. Same-day delivery across Marondera.
+                From our farm to your kitchen — hand-cut <strong>beef, pork, goat, chicken, fish, sausages, polony &amp; roadrunners</strong>,
+                plus crisp vegetables, eggs and farm-fresh produce. Serving <strong>Marondera &amp; Harare</strong>.
               </p>
             </Reveal>
             <Reveal delay={360}>
@@ -93,7 +94,7 @@ export default function Home() {
             <Reveal delay={480}>
               <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto lg:mx-0">
                 {[
-                  { icon: Truck, label: "Same-Day Delivery", sub: "Marondera" },
+                  { icon: Truck, label: "Same-Day Delivery", sub: "Marondera & Harare" },
                   { icon: ShieldCheck, label: "Hygienic", sub: "Fresh & Safe" },
                   { icon: Leaf, label: "Farm Fresh", sub: "Direct Source" },
                   { icon: Award, label: "Premium Quality", sub: "Trusted Cuts" },
@@ -163,7 +164,9 @@ export default function Home() {
               "🥚 Farm Eggs",
               "🥬 Fresh Vegetables",
               "🚚 Same-Day Delivery",
-              "📍 59A Carrington Ave, Marondera",
+              "� Roadrunners",
+              "� 59A Carrington Ave, Marondera",
+              "📍 No. 7 Logan, Hatfield, Harare",
             ].map((t, i) => (
               <span
                 key={`${k}-${i}`}
@@ -190,15 +193,15 @@ export default function Home() {
                 <span className="text-gradient-fire">pride</span>.
               </h2>
               <p className="mt-5 text-slate-600 text-base sm:text-lg leading-relaxed">
-                <strong className="text-brand-navy">Tinenyasha Butchery &amp; Farm-Fresh
-                Produces</strong> is a family-run butchery and farm in Marondera, Zimbabwe.
+                <strong className="text-brand-navy">Tinenyasha Butchery &amp; Farm-Fresh</strong>
+                {" "}is a family-run butchery and farm serving <strong>Marondera &amp; Harare</strong>.
                 We raise our own cattle, source the freshest produce from local farms,
                 and deliver straight to your door — fresh, hygienic and on time.
               </p>
               <div className="mt-8 grid grid-cols-3 gap-4">
                 {[
                   { v: "10+", l: "Years Serving" },
-                  { v: "9", l: "Meat Categories" },
+                  { v: "10+", l: "Meat Categories" },
                   { v: "100%", l: "Farm-Fresh" },
                 ].map((s, i) => (
                   <div
@@ -545,19 +548,19 @@ export default function Home() {
             </span>
             <h2 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl mt-4 leading-tight">
               Same-day delivery across{" "}
-              <span className="text-gradient-fire">Marondera</span>.
+              <span className="text-gradient-fire">Marondera &amp; Harare</span>.
             </h2>
             <p className="mt-5 text-white/90 text-base sm:text-lg leading-relaxed">
               Order via WhatsApp before <strong className="text-brand-gold">12 PM</strong>{" "}
-              and receive your fresh meat &amp; produce the same day. Bulk orders &amp;
-              outside Marondera by arrangement.
+              and receive your fresh meat &amp; produce the same day across
+              <strong> Marondera &amp; Harare</strong>. Bulk orders &amp; other areas by arrangement.
             </p>
             <div className="mt-8 grid sm:grid-cols-2 gap-3">
               {[
                 { icon: Clock, t: "Order by 12 PM", s: "Same-day arrival" },
                 { icon: Snowflake, t: "Cold-chain", s: "Insulated packaging" },
                 { icon: ShieldCheck, t: "Sealed Packs", s: "Hygienic & safe" },
-                { icon: MapPin, t: "Marondera +", s: "Other areas: ask us" },
+                { icon: MapPin, t: "Marondera & Harare", s: "Other areas: ask us" },
               ].map((d, i) => (
                 <div
                   key={i}
@@ -637,11 +640,34 @@ export default function Home() {
                     </div>
                     <div>
                       <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">
-                        Address
+                        Visit Us
                       </div>
-                      <div className="font-semibold text-brand-navy mt-0.5">
-                        {SITE.address}
+                      <ul className="mt-1 space-y-1.5">
+                        {SITE.locations.map((loc) => (
+                          <li key={loc.city} className="font-semibold text-brand-navy text-sm">
+                            <span className="text-brand-red">{loc.city}:</span> {loc.address}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="h-11 w-11 rounded-2xl bg-[#1877F2] text-white flex items-center justify-center shrink-0">
+                      <Facebook className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">
+                        Facebook
                       </div>
+                      <a
+                        href={SITE.facebookUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold text-brand-navy mt-0.5 hover:text-[#1877F2] block"
+                      >
+                        Tinenyasha Butchery Farmfresh Produces
+                      </a>
                     </div>
                   </div>
 
@@ -719,8 +745,8 @@ export default function Home() {
             <Reveal delay={150}>
               <div className="rounded-3xl overflow-hidden shadow-card h-full min-h-[400px] ring-1 ring-slate-200">
                 <iframe
-                  title="Map: Tinenyasha Butchery, Marondera"
-                  src="https://www.google.com/maps?q=Marondera%20Zimbabwe%2059A%20Carrington%20Avenue&output=embed"
+                  title="Map: Tinenyasha Butchery — Marondera & Harare"
+                  src={SITE.mapsEmbed}
                   loading="lazy"
                   className="w-full h-full min-h-[400px] border-0"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -756,16 +782,27 @@ export default function Home() {
               </div>
               <p className="mt-5 text-white/70 text-sm max-w-md leading-relaxed">
                 Premium farm-raised meat &amp; daily-fresh produce, delivered to your
-                doorstep across Marondera. Family-run, family-trusted.
+                doorstep across <strong>Marondera &amp; Harare</strong>. Family-run, family-trusted.
               </p>
-              <a
-                href={waLink()}
-                target="_blank"
-                rel="noopener"
-                className="btn-whatsapp mt-6 text-sm px-5 py-3 inline-flex"
-              >
-                Order on WhatsApp
-              </a>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a
+                  href={waLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-whatsapp text-sm px-5 py-3 inline-flex"
+                >
+                  Order on WhatsApp
+                </a>
+                <a
+                  href={SITE.facebookUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#1877F2] hover:bg-[#1463d2] text-white px-5 py-3 text-sm font-semibold transition-colors"
+                >
+                  <Facebook className="h-4 w-4" /> Facebook
+                </a>
+              </div>
             </div>
 
             <div>
@@ -791,10 +828,15 @@ export default function Home() {
             <div>
               <div className="font-display font-extrabold text-lg mb-4">Visit</div>
               <ul className="space-y-3 text-sm text-white/70">
-                <li className="flex gap-2">
-                  <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-brand-gold" />
-                  <span>{SITE.address}</span>
-                </li>
+                {SITE.locations.map((loc) => (
+                  <li key={loc.city} className="flex gap-2">
+                    <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-brand-gold" />
+                    <span>
+                      <span className="font-semibold text-white">{loc.city}:</span>{" "}
+                      {loc.address}
+                    </span>
+                  </li>
+                ))}
                 {SITE.phones.map((ph) => (
                   <li key={ph} className="flex gap-2">
                     <Phone className="h-4 w-4 mt-0.5 shrink-0 text-brand-gold" />
@@ -816,12 +858,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-3 text-xs text-white/60">
-            <div>
-              © {new Date().getFullYear()} Tinenyasha Butchery & Farm-Fresh Produces.
-              All rights reserved.
-            </div>
-            <div>Made with ❤️ in Marondera, Zimbabwe.</div>
+          <div className="mt-12 pt-6 border-t border-white/10 text-center text-xs text-white/60">
+            © {new Date().getFullYear()} Tinenyasha Butchery & Farm-Fresh. All rights reserved.
           </div>
         </div>
       </footer>
